@@ -4,7 +4,7 @@ Alibaba Cloud Bailian Coding Plan provider extension for [Pi Coding Agent](https
 
 ## Features
 
-- 🚀 Access to 8+ top AI models via single subscription
+- 🚀 Access to 9 top AI models via single subscription
 - 💰 Fixed monthly pricing ($50/month Pro plan)
 - 🌍 International and China region support
 - 👁️ Vision support for most models
@@ -12,16 +12,17 @@ Alibaba Cloud Bailian Coding Plan provider extension for [Pi Coding Agent](https
 
 ## Supported Models
 
-| Model                | Provider | Context | Max Tokens | Reasoning | Vision |
-| -------------------- | -------- | ------- | ---------- | --------- | ------ |
-| Qwen3.5 Plus         | Alibaba  | 131K    | 8,192      | ✅        | ✅     |
-| Qwen3 Max 2026-01-23 | Alibaba  | 131K    | 8,192      | ❌        | ✅     |
-| Qwen3 Coder Next     | Alibaba  | 131K    | 8,192      | ❌        | ✅     |
-| Qwen3 Coder Plus     | Alibaba  | 131K    | 8,192      | ❌        | ✅     |
-| GLM-5                | Zhipu    | 202K    | 16,384     | ✅        | ✅     |
-| GLM-4.7              | Zhipu    | 202K    | 16,384     | ✅        | ✅     |
-| Kimi K2.5            | Moonshot | 262K    | 32,768     | ✅        | ✅     |
-| MiniMax M2.5         | MiniMax  | 1M      | 32,768     | ✅        | ✅     |
+| Model             | Provider | Context | Max Tokens | Reasoning | Vision |
+| ----------------- | -------- | ------- | ---------- | --------- | ------ |
+| Qwen3.5 Plus      | Alibaba  | 1M      | 65,536     | ✅        | ✅     |
+| Qwen3.6 Plus      | Alibaba  | 1M      | 65,536     | ✅        | ✅     |
+| Qwen3 Max         | Alibaba  | 262K    | 32,768     | ❌        | ❌     |
+| Qwen3 Coder Next  | Alibaba  | 262K    | 65,536     | ❌        | ❌     |
+| Qwen3 Coder Plus  | Alibaba  | 1M      | 65,536     | ❌        | ❌     |
+| GLM-5             | Zhipu    | 202K    | 16,384     | ✅        | ❌     |
+| GLM-4.7           | Zhipu    | 202K    | 16,384     | ✅        | ❌     |
+| Kimi K2.5         | Moonshot | 262K    | 32,768     | ✅        | ✅     |
+| MiniMax M2.5      | MiniMax  | 196K    | 24,576     | ✅        | ❌     |
 
 ## Prerequisites
 

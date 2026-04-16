@@ -9,6 +9,7 @@ import type { ProviderModelConfig } from "@mariozechner/pi-coding-agent";
  * - 90,000 requests per month (resets on subscription date)
  *
  * Note: Cost is set to 0 as this is a subscription-based plan, not pay-per-token.
+ * Model data sourced from https://models.dev/api.json
  *
  * @see https://www.alibabacloud.com/help/en/model-studio/coding-plan
  */
@@ -19,41 +20,50 @@ export const bailianModels: ProviderModelConfig[] = [
     reasoning: true,
     input: ["text", "image"],
     cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-    contextWindow: 131072,
-    maxTokens: 8192,
+    contextWindow: 1000000,
+    maxTokens: 65536,
+  },
+  {
+    id: "qwen3.6-plus",
+    name: "Qwen3.6 Plus",
+    reasoning: true,
+    input: ["text", "image"],
+    cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+    contextWindow: 1000000,
+    maxTokens: 65536,
   },
   {
     id: "qwen3-max-2026-01-23",
-    name: "Qwen3 Max 2026-01-23",
+    name: "Qwen3 Max",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text"],
     cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-    contextWindow: 131072,
-    maxTokens: 8192,
+    contextWindow: 262144,
+    maxTokens: 32768,
   },
   {
     id: "qwen3-coder-next",
     name: "Qwen3 Coder Next",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text"],
     cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-    contextWindow: 131072,
-    maxTokens: 8192,
+    contextWindow: 262144,
+    maxTokens: 65536,
   },
   {
     id: "qwen3-coder-plus",
     name: "Qwen3 Coder Plus",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text"],
     cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-    contextWindow: 131072,
-    maxTokens: 8192,
+    contextWindow: 1000000,
+    maxTokens: 65536,
   },
   {
     id: "glm-5",
     name: "GLM-5",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text"],
     cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
     contextWindow: 202752,
     maxTokens: 16384,
@@ -62,7 +72,7 @@ export const bailianModels: ProviderModelConfig[] = [
     id: "glm-4.7",
     name: "GLM-4.7",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text"],
     cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
     contextWindow: 202752,
     maxTokens: 16384,
@@ -80,16 +90,16 @@ export const bailianModels: ProviderModelConfig[] = [
     id: "MiniMax-M2.5",
     name: "MiniMax M2.5",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text"],
     cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-    contextWindow: 1048576,
-    maxTokens: 32768,
+    contextWindow: 196608,
+    maxTokens: 24576,
   },
 ];
 
 /**
- * China region models (optional, for users in mainland China)
- * Uses China-specific endpoint: https://coding.dashscope.aliyuncs.com/apps/anthropic/v1
+ * China region models (for users in mainland China)
+ * Uses China-specific endpoint: https://coding.dashscope.aliyuncs.com/apps/anthropic
  */
 export const bailianModelsCN: ProviderModelConfig[] = [
   {
@@ -98,14 +108,59 @@ export const bailianModelsCN: ProviderModelConfig[] = [
     reasoning: true,
     input: ["text", "image"],
     cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-    contextWindow: 131072,
-    maxTokens: 8192,
+    contextWindow: 1000000,
+    maxTokens: 65536,
+  },
+  {
+    id: "qwen3.6-plus",
+    name: "Qwen3.6 Plus (CN)",
+    reasoning: true,
+    input: ["text", "image"],
+    cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+    contextWindow: 1000000,
+    maxTokens: 65536,
+  },
+  {
+    id: "qwen3-max-2026-01-23",
+    name: "Qwen3 Max (CN)",
+    reasoning: false,
+    input: ["text"],
+    cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+    contextWindow: 262144,
+    maxTokens: 32768,
+  },
+  {
+    id: "qwen3-coder-next",
+    name: "Qwen3 Coder Next (CN)",
+    reasoning: false,
+    input: ["text"],
+    cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+    contextWindow: 262144,
+    maxTokens: 65536,
+  },
+  {
+    id: "qwen3-coder-plus",
+    name: "Qwen3 Coder Plus (CN)",
+    reasoning: false,
+    input: ["text"],
+    cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+    contextWindow: 1000000,
+    maxTokens: 65536,
   },
   {
     id: "glm-5",
     name: "GLM-5 (CN)",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text"],
+    cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+    contextWindow: 202752,
+    maxTokens: 16384,
+  },
+  {
+    id: "glm-4.7",
+    name: "GLM-4.7 (CN)",
+    reasoning: true,
+    input: ["text"],
     cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
     contextWindow: 202752,
     maxTokens: 16384,
@@ -123,9 +178,9 @@ export const bailianModelsCN: ProviderModelConfig[] = [
     id: "MiniMax-M2.5",
     name: "MiniMax M2.5 (CN)",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text"],
     cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-    contextWindow: 1048576,
-    maxTokens: 32768,
+    contextWindow: 196608,
+    maxTokens: 24576,
   },
 ];

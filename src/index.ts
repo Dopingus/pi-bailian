@@ -138,7 +138,8 @@ async function refreshBailianToken(credentials: OAuthCredentials): Promise<OAuth
  *
  * This extension adds support for:
  * - Qwen3.5 Plus (recommended, supports vision)
- * - Qwen3 Max 2026-01-23
+ * - Qwen3.6 Plus (supports vision)
+ * - Qwen3 Max
  * - Qwen3 Coder Next
  * - Qwen3 Coder Plus
  * - GLM-5 (Zhipu)
