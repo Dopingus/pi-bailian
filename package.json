@@ -1,0 +1,47 @@
+{
+  "name": "pi-bailian",
+  "version": "1.0.0",
+  "description": "Alibaba Cloud Bailian Coding Plan provider for Pi Coding Agent",
+  "type": "module",
+  "main": "src/index.ts",
+  "author": "dopingus",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dopingus/pi-bailian.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Dopingus/pi-bailian/issues"
+  },
+  "homepage": "https://github.com/Dopingus/pi-bailian#readme",
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "bailian",
+    "alibaba",
+    "coding-plan",
+    "qwen",
+    "glm",
+    "kimi"
+  ],
+  "files": [
+    "src"
+  ],
+  "pi": {
+    "extensions": [
+      "./src"
+    ]
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@mariozechner/pi-coding-agent": "^0.61.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
