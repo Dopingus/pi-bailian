@@ -182,13 +182,5 @@ export default function (pi: ExtensionAPI) {
     },
   });
 
-  // Log registration info
-  pi.on("session_start", () => {
-    console.log("[pi-bailian] Bailian Coding Plan provider registered");
-    console.log("[pi-bailian] International: bailian-coding-plan");
-    console.log("[pi-bailian] China: bailian-coding-plan-cn");
-    console.log(
-      "[pi-bailian] Setup: /login bailian-coding-plan OR export BAILIAN_CODING_PLAN_API_KEY",
-    );
-  });
+
 }
