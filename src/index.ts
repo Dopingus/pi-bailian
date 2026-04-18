@@ -68,7 +68,7 @@ function validateApiKey(key: string): { valid: boolean; error?: string } {
  */
 async function loginBailian(
   callbacks: OAuthLoginCallbacks,
-  region: "intl" | "cn" = "intl",
+  region: "intl" | "cn" = "intl"
 ): Promise<OAuthCredentials> {
   const consoleUrl =
     region === "intl"
@@ -181,6 +181,4 @@ export default function (pi: ExtensionAPI) {
       getApiKey: getApiKey,
     },
   });
-
-
 }
