@@ -1,35 +1,40 @@
 # pi-bailian
 
-Alibaba Cloud Bailian Coding Plan provider extension for [Pi Coding Agent](https://pi.dev/).
+A [Pi Coding Agent](https://pi.dev/) extension that adds **Alibaba Cloud Bailian Coding Plan** as a provider. This extension enables Pi to connect to Bailian's Coding Plan subscription service.
 
-## Features
+> **Note:** This is a provider extension, not the Coding Plan service itself. You must subscribe to Alibaba Cloud's Bailian Coding Plan separately to use this extension.
 
-- 🚀 Access to 9 top AI models via single subscription
-- 💰 Fixed monthly pricing ($50/month Pro plan)
-- 🌍 International and China region support
-- 👁️ Vision support for most models
-- 🧠 Reasoning models available (Qwen3.5 Plus, GLM-5, Kimi K2.5, MiniMax-M2.5)
+## What This Extension Does
 
-## Supported Models
+- 🔌 Connects Pi to Alibaba Cloud's Bailian Coding Plan API
+- 🌍 Supports both International and China region endpoints
+- 🔐 Handles API key configuration via environment variable or interactive login
+- 📋 Provides model definitions for 9 AI models available through Coding Plan
 
-| Model             | Provider | Context | Max Tokens | Reasoning | Vision |
-| ----------------- | -------- | ------- | ---------- | --------- | ------ |
-| Qwen3.5 Plus      | Alibaba  | 1M      | 65,536     | ✅        | ✅     |
-| Qwen3.6 Plus      | Alibaba  | 1M      | 65,536     | ✅        | ✅     |
-| Qwen3 Max         | Alibaba  | 262K    | 32,768     | ❌        | ❌     |
-| Qwen3 Coder Next  | Alibaba  | 262K    | 65,536     | ❌        | ❌     |
-| Qwen3 Coder Plus  | Alibaba  | 1M      | 65,536     | ❌        | ❌     |
-| GLM-5             | Zhipu    | 202K    | 16,384     | ✅        | ❌     |
-| GLM-4.7           | Zhipu    | 202K    | 16,384     | ✅        | ❌     |
-| Kimi K2.5         | Moonshot | 262K    | 32,768     | ✅        | ✅     |
-| MiniMax M2.5      | MiniMax  | 196K    | 24,576     | ✅        | ❌     |
+## Models Available Through Coding Plan
 
-## Prerequisites
+These models are provided by **Alibaba Cloud Bailian Coding Plan** (subscription required):
 
-1. **Subscribe to Bailian Coding Plan**
+| Model            | Provider | Context | Max Tokens | Reasoning | Vision |
+| ---------------- | -------- | ------- | ---------- | --------- | ------ |
+| Qwen3.5 Plus     | Alibaba  | 1M      | 65,536     | ✅        | ✅     |
+| Qwen3.6 Plus     | Alibaba  | 1M      | 65,536     | ✅        | ✅     |
+| Qwen3 Max        | Alibaba  | 262K    | 32,768     | ❌        | ❌     |
+| Qwen3 Coder Next | Alibaba  | 262K    | 65,536     | ❌        | ❌     |
+| Qwen3 Coder Plus | Alibaba  | 1M      | 65,536     | ❌        | ❌     |
+| GLM-5            | Zhipu    | 202K    | 16,384     | ✅        | ❌     |
+| GLM-4.7          | Zhipu    | 202K    | 16,384     | ✅        | ❌     |
+| Kimi K2.5        | Moonshot | 262K    | 32,768     | ✅        | ✅     |
+| MiniMax M2.5     | MiniMax  | 196K    | 24,576     | ✅        | ❌     |
+
+## Coding Plan Subscription (Required)
+
+**You must subscribe to Alibaba Cloud Bailian Coding Plan to use this extension.**
+
+1. **Subscribe to Coding Plan**
    - Visit [Alibaba Cloud Model Studio](https://modelstudio.console.alibabacloud.com/)
-   - Subscribe to Pro plan ($50/month)
-   - Get your API key (format: `sk-sp-xxxxx`)
+   - Subscribe to Pro plan ($50/month, provided by Alibaba Cloud)
+   - Get your API key (format: `sk-sp-xxxxx`) from Alibaba Cloud
 
 2. **Pi Coding Agent** installed
    ```bash
@@ -139,20 +144,17 @@ export BAILIAN_CODING_PLAN_API_KEY=sk-sp-xxxxx
 pi --provider bailian-coding-plan-cn --model qwen3.5-plus
 ```
 
-## Usage Quotas
+## Coding Plan Quotas (Alibaba Cloud)
 
-**Pro Plan ($50/month):**
+**These quotas are set by Alibaba Cloud Bailian Coding Plan:**
+
+**Pro Plan ($50/month from Alibaba Cloud):**
 
 - 6,000 requests per 5 hours (sliding window)
 - 45,000 requests per week (resets Monday 00:00 UTC+8)
 - 90,000 requests per month (resets on subscription date)
 
-**Request cost estimate:**
-
-- Simple tasks: ~5-10 requests
-- Complex tasks: ~10-30 requests
-
-Check usage: [Coding Plan Console](https://modelstudio.console.alibabacloud.com/)
+Check your usage on the [Coding Plan Console](https://modelstudio.console.alibabacloud.com/) (Alibaba Cloud's dashboard).
 
 ## Important Notes
 
